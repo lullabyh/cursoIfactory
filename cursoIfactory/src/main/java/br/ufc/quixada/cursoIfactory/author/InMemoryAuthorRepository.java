@@ -3,6 +3,7 @@ package br.ufc.quixada.cursoIfactory.author;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -26,10 +27,10 @@ public class InMemoryAuthorRepository implements AuthorRepository{
 	}
 	
 	public void delete(Integer idAuthor){
-		//o idAuthor significa o index do author nesse caso
-		for (Author author : AUTHORS) {
-			if(author.getId() == idAuthor){
-				AUTHORS.remove(author.getId());
+		for(Iterator<Author> it = AUTHORS.iterator(); it.hasNext(); ){
+			Author author = it.next();
+			if(author.getId().equals(idAuthor)){
+				AUTHORS.remove(author);
 			}
 		}
 	}

@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,8 +34,16 @@ public class AuthorController {
 		return ResponseEntity.created(createdURL.toURI()).build();
 	}
 	
-	@DeleteMapping
-	public void deleteAuthor(@RequestBody Integer idAuthor){
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> deleteAuthor(@PathVariable("id") Integer idAuthor) throws MalformedURLException, URISyntaxException{
 		repository.delete(idAuthor);
+		URL createdURL = new URL("http://localhost:8080/authors");
+		return ResponseEntity.created(createdURL.toURI()).build();
+	}
+	
+	@PutMapping("/{id}")
+	public ResponseEntity<Void> putAuthor() throws MalformedURLException, URISyntaxException{
+		URL createdURL = new URL("http://localhost:8080/authors");
+		return ResponseEntity.created(createdURL.toURI()).build();
 	}
 }
