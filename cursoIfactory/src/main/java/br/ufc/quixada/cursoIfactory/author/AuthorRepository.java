@@ -7,5 +7,6 @@ public interface AuthorRepository {
 	void save(Author author);
 	
 	void delete(Integer idAuthor);
-
+	
+	void put(Integer idAuthor, Author author);
 }

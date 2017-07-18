@@ -34,4 +34,14 @@ public class InMemoryAuthorRepository implements AuthorRepository{
 			}
 		}
 	}
+	
+	public void put(Integer idAuthor, Author author){
+		for(Iterator<Author> it = AUTHORS.iterator(); it.hasNext(); ){
+			Author a = it.next();
+			if(a.getId().equals(idAuthor)){
+				a.setFirstName(author.getFirstName());
+				a.setLastName(author.getLastName());
+			}
+		}
+	}
 }
