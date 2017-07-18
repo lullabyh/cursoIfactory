@@ -33,7 +33,7 @@ public class AuthorController {
 	}
 	
 	@DeleteMapping
-	public void deleteAuthor(@RequestBody Integer idAuthor) throws MalformedURLException{
+	public void deleteAuthor(@RequestBody Integer idAuthor){
 		repository.delete(idAuthor);
 	}
 }

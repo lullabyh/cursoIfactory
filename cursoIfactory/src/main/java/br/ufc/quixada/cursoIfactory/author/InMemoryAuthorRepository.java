@@ -28,7 +28,7 @@ public class InMemoryAuthorRepository implements AuthorRepository{
 	public void delete(Integer idAuthor){
 		//o idAuthor significa o index do author nesse caso
 		for (Author author : AUTHORS) {
-			if(author.getId().equals(idAuthor)){
+			if(author.getId() == idAuthor){
 				AUTHORS.remove(author.getId());
 			}
 		}
