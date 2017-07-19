@@ -6,15 +6,15 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PubsRepositoryImpl implements PubsRepository{
+public class PubRepositoryImpl implements PubRepository{
 	
-	private static final List<Pubs> PUBS = new ArrayList<>();
+	private static final List<Pub> PUBS = new ArrayList<>();
 	
-	public Iterable<Pubs> findAll(){
+	public Iterable<Pub> findAll(){
 		return PUBS;
 	}
 	
-	public void save(Pubs pubs){
+	public void save(Pub pubs){
 		
 	}
 	
@@ -22,7 +22,7 @@ public class PubsRepositoryImpl implements PubsRepository{
 		
 	}
 	
-	public void update(Integer idPubs, Pubs pubs){
+	public void update(Integer idPubs, Pub pubs){
 		
 	}
 }

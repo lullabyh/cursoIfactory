@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/Pubs")
-public class PubsController {
+public class PubController {
 	
 	@Autowired
-	private PubsRepository pubsRepository;
+	private PubRepository pubsRepository;
 	
 	@GetMapping
-	public ResponseEntity<Pubs> getPubs(){
+	public ResponseEntity<Pub> getPubs(){
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 }

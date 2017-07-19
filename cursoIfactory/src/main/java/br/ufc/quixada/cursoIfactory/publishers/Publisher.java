@@ -1,18 +1,28 @@
 package br.ufc.quixada.cursoIfactory.publishers;
 
-import br.ufc.quixada.cursoIfactory.pubs.Pubs;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-public class Publishers {
+import br.ufc.quixada.cursoIfactory.pubs.Pub;
+
+@Entity
+public class Publisher {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	private String nome;
-	private Pubs pubs;
 	
-	public Publishers() {
+	private String nome;
+	
+	private Pub pubs;
+	
+	public Publisher() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Publishers(Integer id, String nome, Pubs pubs) {
+	public Publisher(Integer id, String nome, Pub pubs) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -31,10 +41,10 @@ public class Publishers {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Pubs getPubs() {
+	public Pub getPubs() {
 		return pubs;
 	}
-	public void setPubs(Pubs pubs) {
+	public void setPubs(Pub pubs) {
 		this.pubs = pubs;
 	}
 	
