@@ -43,7 +43,16 @@ public class AuthorController {
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<Void> putAuthor(@PathVariable("id")Integer idAuthor, @RequestBody Author author) throws MalformedURLException, URISyntaxException{
-		repository.put(idAuthor, author);
+		Author authorBanco = repository.findOne(idAuthor);
+		
+		if(authorBanco!=null){
+			authorBanco.setFirstName(author.getFirstName());
+			authorBanco.setLastName(author.getLastName());
+			repository.save(authorBanco);
+		} else {
+			repository.save(author);
+		}
+		
 		URL createdURL = new URL("http://localhost:8080/authors");
 		return ResponseEntity.created(createdURL.toURI()).build();
 	}

@@ -1,28 +1,28 @@
 package br.ufc.quixada.cursoIfactory.author;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+//Classe de teste para a primeira atividade sem JPA
 @Component
-public class InMemoryAuthorRepository implements AuthorRepository{
+public class InMemoryAuthorRepository{
 	
 	private static final List<Author> AUTHORS = new ArrayList<>();
 	
-	static{
-		AUTHORS.addAll(Arrays.asList( new Author(1, "Mariana","Silva Santos"),
-										new Author(2, "Darliane","Silva") ));
-	}
+//	static{
+//		AUTHORS.addAll(Arrays.asList( new Author(1, "Mariana","Silva Santos"),
+//										new Author(2, "Darliane","Silva") ));
+//	}
 	
 	public Iterable<Author> findAll(){
 		return Collections.unmodifiableList(AUTHORS);
 	}
 	
-	public void save(Author author){
+	public void salvar(Author author){
 		AUTHORS.add(author);
 	}
 	

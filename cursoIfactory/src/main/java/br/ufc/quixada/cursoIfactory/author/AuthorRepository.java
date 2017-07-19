@@ -1,12 +1,7 @@
 package br.ufc.quixada.cursoIfactory.author;
 
-public interface AuthorRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface AuthorRepository  extends CrudRepository<Author, Integer>{
 	
-	Iterable<Author> findAll();
-	
-	void save(Author author);
-	
-	void delete(Integer idAuthor);
-	
-	void put(Integer idAuthor, Author author);
 }

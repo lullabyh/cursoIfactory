@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import br.ufc.quixada.cursoIfactory.pubs.Pub;
+import br.ufc.quixada.cursoIfactory.pub.Pub;
 
 @Entity
 public class Author {
@@ -23,17 +23,6 @@ public class Author {
 	
 	@OneToMany(mappedBy = "author")
 	private Collection<Pub> pubs;
-	
-	public Author() {
-		// TODO Auto-generated constructor stub
-	}
-
-	public Author(Integer id, String firstName, String lastName) {
-		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
 	
 	public Integer getId() {
 		return id;

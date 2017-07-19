@@ -1,4 +1,4 @@
-package br.ufc.quixada.cursoIfactory.pubs;
+package br.ufc.quixada.cursoIfactory.pub;
 
 import java.util.ArrayList;
 import java.util.List;

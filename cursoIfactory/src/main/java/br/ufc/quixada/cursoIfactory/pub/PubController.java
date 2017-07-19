@@ -1,4 +1,4 @@
-package br.ufc.quixada.cursoIfactory.pubs;
+package br.ufc.quixada.cursoIfactory.pub;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

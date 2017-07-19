@@ -1,4 +1,4 @@
-package br.ufc.quixada.cursoIfactory.pubs;
+package br.ufc.quixada.cursoIfactory.pub;
 
 public interface PubRepository {
 	

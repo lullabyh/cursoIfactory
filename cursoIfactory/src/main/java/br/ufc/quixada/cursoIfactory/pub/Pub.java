@@ -1,8 +1,10 @@
-package br.ufc.quixada.cursoIfactory.pubs;
+package br.ufc.quixada.cursoIfactory.pub;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,7 +13,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import br.ufc.quixada.cursoIfactory.author.Author;
-import br.ufc.quixada.cursoIfactory.publishers.Publisher;
+import br.ufc.quixada.cursoIfactory.publisher.Publisher;
+
 
 @Entity
 public class Pub {
@@ -27,21 +30,12 @@ public class Pub {
 	private Date data;
 
 	private String titulo;
-
-	private String Tipo;
+	
+	@Enumerated(EnumType.STRING)
+	private TypePub tipo;
 	
 	@ManyToOne
-	private Publisher publishers;
-
-	public Pub(Integer id, Author author, Date data, String titulo, String tipo, Publisher publishers) {
-		super();
-		this.id = id;
-		this.author = author;
-		this.data = data;
-		this.titulo = titulo;
-		Tipo = tipo;
-		this.publishers = publishers;
-	}
+	private Publisher publisher;
 
 	public Integer getId() {
 		return id;
@@ -75,19 +69,19 @@ public class Pub {
 		this.titulo = nome;
 	}
 
-	public String getTipo() {
-		return Tipo;
+	public TypePub getTipo() {
+		return tipo;
 	}
 
-	public void setTipo(String tipo) {
-		Tipo = tipo;
+	public void setTipo(TypePub tipo) {
+		this.tipo = tipo;
 	}
 
-	public Publisher getPublishers() {
-		return publishers;
+	public Publisher getPublisher() {
+		return publisher;
 	}
 
-	public void setPublishers(Publisher publishers) {
-		this.publishers = publishers;
+	public void setPublisher(Publisher publisher) {
+		this.publisher = publisher;
 	}
 }
